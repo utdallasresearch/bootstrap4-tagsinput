@@ -3,11 +3,11 @@
   "title": "Bootstrap 4 Tagsinput",
   "description": "jQuery tags input plugin based on Twitter Bootstrap 4",
   "version": "4.1.2",
-  "repository":
-    {
+  "repository": {
       "type": "git",
       "url": "https://github.com/Nodws/bootstrap4-tagsinput.git"
-    },
-   "license": "MIT",
+  },
+  "main": "tagsinput.js",
+  "license": "MIT",
   "homepage": "https://github.com/Nodws/bootstrap4-tagsinput"
 }

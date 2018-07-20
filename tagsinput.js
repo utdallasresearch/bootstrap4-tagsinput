@@ -3,7 +3,13 @@
  * 
  */
 
-(function ($) {
+(function (factory) {
+  if (typeof module === "object" && typeof module.exports === "object") {
+    module.exports = factory(require("jquery"), window, document);
+  } else {
+    factory(jQuery, window, document);
+  }
+}(function ($, window, document, undefined) {
   "use strict";
 
   var defaultOptions = {
@@ -685,4 +691,7 @@
   $(function() {
     $("input[data-role=tagsinput], select[multiple][data-role=tagsinput]").tagsinput();
   });
-})(window.jQuery);
+
+  return $.fn.tagsinput;
+
+}));
