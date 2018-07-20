@@ -365,7 +365,7 @@
         $.fn.typeahead.apply(self.$input, typeaheadjs).on('typeahead:selected', $.proxy(function (obj, datum, name) {
           var index = 0;
           typeaheadjs.some(function(dataset, _index) {
-            if (dataset.name === name) {
+            if (dataset !== null && dataset.name === name) {
               index = _index;
               return true;
             }
