@@ -1,0 +1,143 @@
+//
+// bootstrap4-tagsinput Sass for Bootstrap 4
+// --------------------------------------------------
+
+// Variables
+$tagsinput-badge-bg: $primary !default;
+$tagsinput-badge-border-radius: $badge-border-radius !default;
+$tagsinput-close-border-radius: $border-radius !default;
+$tagsinput-close-content: "x" !default;
+$tagsinput-close-font: inherit !default;
+$typeahead-suggestion-hover-bg: $primary !default;
+
+// TagsInput
+.bootstrap-tagsinput {
+  width: 100%;
+  cursor: text;
+  background-color: $input-bg;
+  border: $input-btn-border-width solid $input-border-color;
+  color: $input-color;
+  font-size: $font-size-base;
+  @include border-radius($border-radius);
+  @include box-shadow($input-box-shadow);
+  @include transition($input-transition);
+  padding: 4px 6px;
+  line-height: $input-btn-line-height;
+
+  & input {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0 6px;
+    margin: 0 2px;
+    width: auto;
+    max-width: inherit;
+
+    &:focus {
+      border: none;
+      box-shadow: none;
+    }
+
+    &::-moz-placeholder {
+      color: $input-placeholder-color;
+      opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+      color: $input-placeholder-color;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $input-placeholder-color;
+    }
+  }
+
+  &.form-control {
+    & input::-moz-placeholder {
+      color: $input-placeholder-color;
+      opacity: 1;
+    }
+
+    & input:-ms-input-placeholder {
+      color: $input-placeholder-color;
+    }
+
+    & input::-webkit-input-placeholder {
+      color: $input-placeholder-color;
+    }
+  }
+
+  // Tags
+  & .badge {
+    margin-right: 2px;
+    font-size: 75%;
+    @include badge-variant($tagsinput-badge-bg);
+    @include border-radius($tagsinput-badge-border-radius);
+
+    & [data-role="remove"] {
+      margin-left: 8px;
+      cursor: pointer;
+
+      &:after {
+        content: $tagsinput-close-content;
+        font-family: $tagsinput-close-font;
+        padding: 0px 5px;
+        background-color: rgba(0, 0, 0, 0.1);
+        @include border-radius($tagsinput-close-border-radius);
+      }
+
+      &:hover {
+        &:after {
+          background-color: rgba(0, 0, 0, 0.62);
+        }
+
+        &:active {
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        }
+      }
+    }
+  }
+
+  // Typeahead
+  .tt-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: $zindex-dropdown;
+    display: none;
+    float: left;
+    min-width: $dropdown-min-width;
+    padding: $dropdown-padding-y 0;
+    margin: $dropdown-spacer 0 0;
+    color: $body-color;
+    text-align: left;
+    list-style: none;
+    font-size: $font-size-base;
+    background-color: $dropdown-bg;
+    border: $dropdown-border-width solid $dropdown-border-color;
+    @include border-radius($dropdown-border-radius);
+    @include box-shadow($dropdown-box-shadow);
+    background-clip: padding-box;
+    cursor: pointer;
+
+    .tt-suggestion {
+      display: block;
+      padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+      clear: both;
+      font-weight: $font-weight-normal;
+      color: $dropdown-link-color;
+      line-height: $line-height-base;
+      white-space: nowrap;
+
+      @include hover-focus {
+        color: $dropdown-link-hover-color;
+        text-decoration: none;
+        outline: 0;
+        @include gradient-bg($typeahead-suggestion-hover-bg);
+      }
+    }
+  
+  }
+
+}
