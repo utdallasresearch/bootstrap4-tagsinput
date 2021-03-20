@@ -281,7 +281,7 @@
             return self.options.itemValue(item).toString();
           });
 
-      self.$element.val( val.join(self.options.delimiter) );
+      self.$element.val( self.multiple ? val : val.join(self.options.delimiter) );
 
       if (self.options.triggerChange)
         self.$element.trigger('change');
