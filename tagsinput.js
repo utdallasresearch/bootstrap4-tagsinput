@@ -1,5 +1,5 @@
 /*
- * bootstrap4-tagsinput v4.2.1
+ * bootstrap4-tagsinput v4.2.2
  * 
  */
 
@@ -35,7 +35,7 @@
     delimiterRegex: null,
     cancelConfirmKeysOnEmpty: false,
     onTagExists: function(item, $tag) {
-      $tag.addClass('sr-only');
+      $tag.css({ opacity: 0 }).animate({ opacity: 1 }, 500); // blink once
     },
     trimValue: false,
     allowDuplicates: false,
